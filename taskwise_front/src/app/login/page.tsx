@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import { supabase } from '@/lib/supabaseClient'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
+
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -46,6 +48,12 @@ export default function LoginPage() {
       >
         登录
       </button>
+      <p className="mt-4 text-sm text-gray-600">
+      还没有账号？{' '}
+      <Link href="/register" className="text-blue-600 hover:underline">
+        注册一个
+      </Link>
+    </p>
     </main>
   )
 }
